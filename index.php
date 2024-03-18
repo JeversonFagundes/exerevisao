@@ -22,7 +22,7 @@ if ($_POST) {
         
         echo "Você acertou o Marciano na posição:" . $marciano . '<br><br>';
 
-        echo "Com o número de tentaivas = $bala" . '<br><br>'; 
+        echo "Com o número de tentaivas restantes = $bala" . '<br><br>'; 
 
 
       }else {
