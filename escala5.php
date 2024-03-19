@@ -2,11 +2,16 @@
 
 if ($_POST) {
     
-    include("funcoes.php");
-
-    $n1 = $_POST['n1'];
-
-    echo "A sequência é : " . sequencia ($n1);
+    if ($_POST) {
+    
+        include("funcoes.php");
+    
+        $n1 = $_POST['n1'];
+        $n2 = $_POST['n2'];
+    
+        echo "O valor foi: ". expo($n1, $n2);
+    }
+    
 }
 ?>
 
@@ -16,17 +21,13 @@ if ($_POST) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 6.</title>
+    <title>Elevar ao expoente.</title>
 
 </head>
 
 <body>
 
-    <h1>Exercicio 6.</h1>
-
-    <h2>Descrição.</h2>
-
-    <p>Dado um valor n informado pelo usuário. Use uma função que receba um valor n e imprima até a n-ésima linha.</p>
+    <h1>Elevar ao expoente.</h1>
 
     <hr>
 
@@ -35,9 +36,12 @@ if ($_POST) {
     <label for="n1">Informe o número:</label>
     <input type="number" name="n1" id="n1"><br><br>
 
+    <label for="n2">Informe o expoente</label>
+    <input type="number" name="n2" id="n2"><br><br>
+
     <input type="submit" value="Enviar"><br>
 
-    <a href="index.php">Voltar</a>
+    <a href="exercicio7.php">Voltar</a>
     </form>
 
 

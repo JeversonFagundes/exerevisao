@@ -35,7 +35,7 @@ if ($_POST) {
 
           if ($bala < 1) {
 
-            echo "Você disperdiçou todas as suas chances de acertar o Marciano e ele acaba o raptando e o levando para Marte a fim de fazer estudos com você.";
+            echo "Você disperdiçou todas as suas chances de acertar o Marciano e ele acaba o raptando e o levando para Marte a fim de fazer estudos com você. O Marciano estava na posição " . $marciano;
 
           }else {
 
@@ -50,7 +50,7 @@ if ($_POST) {
 
              if ($bala < 1) {
 
-              echo "Você disperdiçou todas as suas chances de acertar o Marciano e ele acaba o raptando e o levando para Marte a fim de fazer estudos com você.";
+              echo "Você disperdiçou todas as suas chances de acertar o Marciano e ele acaba o raptando e o levando para Marte a fim de fazer estudos com você. O Marciano estava na posição " . $marciano;
 
             }else {
               echo "Você ainda tem $bala tentativas.";

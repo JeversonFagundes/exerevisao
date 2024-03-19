@@ -186,22 +186,16 @@ function temperatura($n1, $n2){
 
 /*Exercicio 6.*/
 
-function posicao9($n1){
+function sequencia($n1){
 
-    if ($n1 <= 0 and $n1 >= 10) {
+    $valores = [];
+    for ($i=1; $i <= $n1; $i++) { 
         
-        $incorreto = "Está incorreto";
-
-        return $incorreto;
-    }else {
-
-        $valores = [];
-
-        for ($i=$n1; $i < 10; $i++) { 
-
-
-
+        for ($b=1; $b <= $i; $b++) { 
+           
+           
         }
+        echo "<br>";
     }
 }
 
@@ -209,20 +203,62 @@ function posicao9($n1){
 
 /*Exercicio 7.*/
 
-function escolha ($n1, $n2, $n3, $num){
+/*Impar ou par*/
+function par($n1){
 
-    
-   if ($num == 1) {
-    
-    $par = $n1/2;
-
-    if ($par == 0) {
+    if ($n1 % 2 == 0) {
         
-        echo "O valor é par";
+        $par = "Par!";
+
+        return $par;
+
     }else {
-        echo "O valor é impar";
+    
+        $impar = "Impar!";
+
+        return $impar;
     }
-   }
+}
+/* */
+
+/*Multiplicar dois números*/
+
+function multi($n1, $n2){
+
+    $multi = $n1 * $n2;
+
+    return $multi;
+}
+/* */
+
+/*Dividir dois números.*/
+
+function div($n1, $n2){
+
+    $div = $n1 / $n2;
+
+    return $div;
+}
+
+/* Raiz quadrada de um número. */
+
+function raiz($n1){
+
+    $result = pow($n1, 1/2);
+
+    return $result;
+}
+/* */
+
+/*Expoente*/
+
+function expo($n1, $n2){
+
+    $valor = pow($n1, $n2);
+
+    //pow(): é uma função que nos permite elevar um valor a um expoente. pow(valor, expoente);
+
+    return $valor;
 }
 
 /* */

@@ -3,9 +3,43 @@
 
 if ($_POST) {
     
-    include("funcoes.php");
+    $num = $_POST['num'];
 
-    echo "A sequência é : " .  escolha();
+    if ($num < 1 or $num > 5) {
+       
+        echo "Não temos essa operação no menu de opções.";
+
+    }else{
+
+        if ($num == 1) {
+            
+            header("location: escala1.php");
+        }else {
+            
+            if ($num == 2) {
+                
+                header("location: escala2.php");
+            }else {
+                
+                if ($num == 3) {
+                
+                    header("location: escala3.php");
+                }else {
+                    
+                    if ($num == 4) {
+                
+                        header("location: escala4.php");
+                    }else {
+                        
+                        if ($num == 5) {
+                
+                            header("location: escala5.php");
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 ?>
@@ -27,7 +61,7 @@ if ($_POST) {
 
     <h2>Descrição.</h2>
 
-    <p>Faça um programa onde o usuário possa selecionar quais das opções ele gostaria de executar, recebendo a opção do usuário e os dados necessários em cada operação. Para cada opção, uma função deverá ser implementada. 
+    <p>Faça um programa onde o usuário possa selecionar quais das opções ele gostaria de executar, recebendo a opção do usuário e os dados necessários em cada operação. Para cada opção, uma função deverá ser implementada.
    Menu opções:</p>
 
     <p>1. Verifique se um número é par ou ímpar.</p>
@@ -41,6 +75,17 @@ if ($_POST) {
 	<p>5. Elevar um número a uma potência.</p>
 
     <hr>
+
+    <form action="" method="post">
+
+    <label for="num">Informa um dos números aciam para poder realizar uma das operações:</label>
+    <input type="number" name="num" id="num"><br><br>
+
+    <input type="submit" value="Enviar"><br><br>
+
+    <a href="index.php">Voltar</a>
+
+    </form>
 
     
 
