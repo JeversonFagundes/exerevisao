@@ -32,7 +32,7 @@ if ($_POST) {
 
     <form action="" method="post">
 
-    <label for="n1">Dividendo:</label>
+    <label for="n1">Informe o valor:</label>
     <input type="number" name="n1" id="n1"><br><br>
 
     <input type="submit" value="Enviar"><br>
