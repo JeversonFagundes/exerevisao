@@ -39,13 +39,13 @@ $dados = mysqli_fetch_assoc($resultado);
     <input type="text" readonly value="<?php echo $dados['saldo'];?>" name="saldo" id="saldo"/><br><br>
         
     <label for="deposito">Informe o valor a ser depositado:</label>
-    <input type="number" name="deposito" id="deposito"><br><br>
-       
+    <input type="text" name="deposito" id="deposito"><br><br>
+
     <input type="submit" value="Depositar"/>
 
     <p>Deseja <a href="index.html">Voltar!</a></p>
 
 </form>
-    
+
 </body>
 </html>
