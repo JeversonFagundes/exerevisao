@@ -41,7 +41,7 @@ if ($_POST) {
         <label for="n2">Informe o segundo número:</label>
         <input type="text" name="n2" id="n2"><br><br>
 
-        <label for="n3">Informe o segundo número:</label>
+        <label for="n3">Informe o terceiro número:</label>
         <input type="text" name="n3" id="n3"><br><br>
 
         <input type="submit" value="Enviar"><br>

@@ -155,7 +155,7 @@ function data($n1, $n2, $n3){
 
 function temperatura($n1, $n2){
 
-    if ($n2 > 2 and $n2 < 1) {
+    if ($n2 > 2 or $n2 < 1) {
         
         $escaIncorreta = "A escala selecionada está incorreta";
 
