@@ -8,7 +8,9 @@ $id = $_POST['id'];
 $depositarsaldo = $_POST['deposito'];
 $saldo = $_POST['saldo'];
 
-$saldoresultante = $saldo + $depositarsaldo;
+$saldoformatado = number_format($depositarsaldo, 2, '.',);
+
+$saldoresultante = $saldo + $saldoformatado;
 
 $sql = "UPDATE saldo SET 
 saldo = $saldoresultante WHERE id_saldo = $id";
