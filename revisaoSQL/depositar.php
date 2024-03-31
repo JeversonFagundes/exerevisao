@@ -39,7 +39,7 @@ $dados = mysqli_fetch_assoc($resultado);
     <input type="text" readonly value="<?php echo $dados['saldo'];?>" name="saldo" id="saldo"/><br><br>
         
     <label for="deposito">Informe o valor a ser depositado:</label>
-    <input type="text" name="deposito" id="deposito"><br><br>
+    <input type="text" name="deposito" id="deposito" placeholder="Use como exemplo 1.50"><br><br>
 
     <input type="submit" value="Depositar"/>
 
