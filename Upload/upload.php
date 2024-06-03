@@ -15,7 +15,11 @@ if ($_FILES['arquivo'] ['size'] > 2000000) {
 
 }else {
 
-    //continuar o upload normalmente.
-    
+    //verificar se o arquivo é uma imagem ou não.
+    var_dump($_FILES['arquivo'] ['name']);
+
+    //pegar a extensão e transformar em letras minúsculas.
+     var_dump(pathinfo($_FILES['arquivo'] ['name'], PATHINFO_EXTENSION));
+
 }
 ?>
