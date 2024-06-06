@@ -1,4 +1,7 @@
+
 <?php
+
+include ("conecta.php");
 
 $pastaDestino = "arquivos/";
 
@@ -46,11 +49,44 @@ if ($_FILES['arquivo'] ['size'] > 2000000) {
             
             if ($fez_upload == true) {
 
+                $sql = "INSERT INTO arquivos (nome_arquivo) VALUES ('$nome_arquivo.$extencao')";
+
+                $resultado = mysqli_query($mysql, $sql); 
+
+                if (isset($_POST['nome_arquivo'])) {
+
+                    //se for uma alteraçãode arqiivos
+                    
+                    $apagou = unlink($pastaDestino. $_POST['nome_arquivo']);
+
+                    if ($apagou == true) {
+                        
+                        $sql2 =  "DELETE FROM arquivos WHERE nome_arquivo =' "
+                        . $_POST['nome_arquivo'] . "'";
+
+                        $resultado2 = mysqli_query($mysql, $sql2);
+
+                        if ($resultado2 == false) {
+                            
+                            echo "Erro ao apagar o arquivo do banco de dados!";
+
+                            die ();
+
+                        }
+
+                    }else {
+                        
+                        echo "Erro ao apagar o arquivo!";
+
+                        die ();
+                    }
+                }
+
                 header("location: index.php");
                 
             }else {
                 
-                echo "Erro ao mover o arquivo!";
+                echo "Erro ao registrar o arquivo no banco de dados!";
             }
         }
      }

@@ -1,3 +1,24 @@
+<?php
+
+include ("conecta.php");
+
+$sql = "SELECT * FROM arquivos";
+
+$resultado = mysqli_query($mysql, $sql);
+
+if ($resultado != false) {
+    
+    $arquivos = mysqli_fetch_all($resultado, MYSQLI_BOTH);
+   
+
+}else {
+
+    echo "Deu error";
+    
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">        
 
@@ -20,7 +41,42 @@
 
         <input type="submit" value="Enviar">
     </form>
-    
+    <br><br>
+
+    <hr>
+
+    <table border="2">
+
+    <thead>
+
+        <tr>
+
+            <th>Nome do arquivo</th>
+            <th colspan="2">Opções</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    <?php
+
+    foreach ($arquivos as $arquivo) {
+        
+        echo "<tr><td>" . $arquivo['nome_arquivo'] . "</td>";
+
+        echo "<td><a href= 'alterar.php?nome_arquivo=" . $arquivo['nome_arquivo'] . "' >Alterar</td>";
+
+        echo "<td><button>Excluir</button></td>";
+    }
+
+    ?>
+
+    </tbody>
+
+    </table>
+
 </body>
 
 </html>
