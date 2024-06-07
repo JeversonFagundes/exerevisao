@@ -21,7 +21,7 @@ $nome_arqivo = $_GET['nome_arquivo'];
 
 Alterando o arquivo <?php echo $nome_arqivo ?> <br><br>
 
-<input type="hidden" name="nome_arquivo">
+<input type="hidden" name="nome_arquivo" value="<?php echo $nome_arqivo; ?>">
 
 <input type="file" name="arquivo"><br><br>
 

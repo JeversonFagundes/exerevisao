@@ -4,8 +4,6 @@ include("conecta.php");
 
 $nome_arquivo = $_GET['nome_arquivo'];
 
-var_dump($nome_arquivo);
-
 $sql = "DELETE FROM arquivos WHERE nome_arquivo = $nome_arquivo";
 
 mysqli_query($mysql, $sql);

@@ -2,65 +2,56 @@
 
 //receber a escolha do usuário e armazenar em um cookie que deve durar 7 dias
 
-if (isset ($_POST)) {
+if ($_POST) {
     
     $tema = $_POST['tema'];
 
-    if ($tema == 1) {
-        
-        setcookie("Escuro", "Black" , time() + 10);
+    var_dump($tema);
 
-        echo "O tema é : " . $_COOKIE['Escuro'];
+   setcookie($tema, "cookie", time() + 10);
 
-        if (isset($_COOKIE['escuro'])) {
-            
-            ?>
-
-            <style>
+   if (isset($_COOKIE[$tema]) == "Escuro") {
     
-                body{
-                    background-color: black;
-    
-                    color: white;
-                }
-            </style>
+    ?>
 
-       
+    <style>
+
+        body{
+            background-color: grey;
+        }
+    </style>
+
+    <?php
+
+   }else {
+    
+    if ($_COOKIE[$tema] == "Branco") {
+    
+        ?>
+
+        <style>
+
+            body{
+                color: red;
+            }
+        </style>
 
         <?php
 
     }else {
         
-        if ($tema == 2) {
+        if (!isset($_COOKIE[$tema])) {
             
-            setcookie("Branco"," White", time() + 10);
-
-            echo "O tema é : " . $_COOKIE['Branco'];
-
-            ?>
-
-            <style>
-
-                body{
-                    background-color: white;
-                    color: red;
-
-                }
-            </style>
-
-            <?php
-
-        }else {
-            
-            if (!isset($_COOKIE['Escuro']) and !isset($_COOKIE['Branco'])) {
-                
-                echo "Não existe cookie!";
-            }
+            echo "Não tem cookie aqui!";
         }
     }
+   }
 }
-?>
 
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -77,10 +68,10 @@ if (isset ($_POST)) {
 <form action="" method="post">
 
 <label for="escuro">Escuro:</label>
-<input type="radio" name="tema"  id="escuro" value="1" ><br><br>
+<input type="radio" name="tema"  id="escuro" value="Escuro" ><br><br>
 
 <label for="claro">Branco:</label>
-<input type="radio" name="tema" id="claro" value="2"><br><br>
+<input type="radio" name="tema" id="claro" value="Branco"><br><br>
 
 <input type="submit" value="Enviar escolha">
 </form>
